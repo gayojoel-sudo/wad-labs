@@ -1,0 +1,22 @@
+==================================================
+CAT 2 IMPLEMENTATION NOTES - THE SUYIAN LODGE PORTFOLIO
+==================================================
+
+1. Loop-rendered dynamic content:
+   - Data stored in the array `lodgeSpaces`. Each object contains the strictly required 'name' key property.
+   - Rendered natively using array loop `forEach()` iterations dynamically appended inside the `#projects` section element.
+
+2. Dynamically add & remove elements:
+   - Input interactive elements inside the UI append lists targeting `#wishlist-list` via native `createElement()` and `appendChild()`.
+   - Node items are purged cleanly on target action callbacks utilizing native `.remove()`.
+
+3. Form handling with validation feedback:
+   - Form submission intercepts default actions using `.preventDefault()`.
+   - Evaluates direct value captures, feeding structural messages dynamically back to the user inside `#form-feedback` using `textContent` and `innerHTML`.
+
+4. Persistent state with localStorage:
+   - Custom planner item nodes are saved to localStorage as a stringified array string key 'suyianItineraryWishlist'.
+   - Read and parsed securely on DOM initialization to maintain visual application state over reloads.
+
+5. Click-to-reveal on banner:
+   - Click events added cleanly to `.hero-bg-img` to trigger class states using element object methods `.classList.toggle()`.
